@@ -52,7 +52,7 @@ exports.getTextId=(req,res,next)=>{
             const data = await fetch(uri);
             const parsedData = await data.json();
             console.log(parsedData);
-            // uri=parsedData.result.short_link;
+            uri=parsedData.result.short_link;
             res.render('./text/textDetail', {
                 textObj: textObj,
                 uri: uri,
