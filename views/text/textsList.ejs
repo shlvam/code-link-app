@@ -1,0 +1,36 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/textsList.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (textArr.length > 0) { %>
+                    <div class="grid">
+                        <% for (let text1 of textArr) { %>
+                            <article class="card product-item">
+                                <div class="card__content">
+                                    <p class="product__description">
+                                        <%= text1.code %>
+                                    </p>
+                                </div>
+                                <!-- <div class="card__actions">
+                                    <a href="/text/<%= text1._id %>" class="btn">Details</a>
+                                </div> -->
+                                <div class="card__actions">
+                                    <a href="/text/<%= text1._id %>" class="btn">Details</a>
+                                    <form action="/deleteText" method="POST">
+                                        <input type="hidden" value="<%= text1._id %>" name="textid">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+
+                                </div>
+                            </article>
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <h1>No Products Found!</h1>
+                <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>
