@@ -47,9 +47,9 @@ exports.getTextId=(req,res,next)=>{
     // console.log(textid);
     Text.findById(textid)
         .then(async (textObj) => {
-            let uri = `http://localhost:8080/text/${textid}`;
+            let uri = `https://code-link-app.herokuapp.com/text/${textid}`;
             uri = `https://api.shrtco.de/v2/shorten?url=${uri}`;
-            const data = await fetch(uri, { redirect: 'manual' });
+            const data = await fetch(uri);
             const parsedData = await data.json();
             console.log(parsedData);
             // uri=parsedData.result.short_link;
