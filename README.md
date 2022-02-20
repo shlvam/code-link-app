@@ -11,7 +11,7 @@ https://code-link-app.herokuapp.com/
 ### `git clone https://github.com/shlvam/code-link-app`
 make a local directory of project
 
-### `npm init`
+### `npm install`
 for setting node server
 
 ### `npm start`
